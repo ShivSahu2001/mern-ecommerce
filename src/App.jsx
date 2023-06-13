@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import LoginPage from './pages/Loginpage'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import SignupPage from './pages/SignupPage'
+import CartPage from './pages/CartPage'
 function App() {
  
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />} />
+          <Route path='/cart' element={<CartPage />} />
         </Routes>
       </Router>
     
