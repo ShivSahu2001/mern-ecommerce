@@ -10,7 +10,8 @@ export function fetchAllProducts() {
 }
 
 export function fetchProductsByFilter(filter) {
-    // filter = {"category": "smartphone"}
+    // filter = {"category": ["smartphone", "laptop"]}
+    // sort = {_sort: "price", _order: "desc"}
     let querystring = "";
 
     for (const key in filter) {

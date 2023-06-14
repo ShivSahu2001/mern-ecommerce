@@ -81,11 +81,21 @@ const ProductList = () => {
   const dispatch = useDispatch()
   const [filter, setFilter] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
   const handleFilter = (e, section, option) => {
-    const newFilter = {...filter, [section.id]: option.value} 
+    console.log(e.target.checked)
+
+    const newFilter = {...filter};
+    if (e.target.checked) {
+      // if checked then only filter
+        newFilter[section.id]= option.value
+    } else {
+      // if unchecked then don't filter it
+      delete newFilter[section.id]
+    }
+
     setFilter(newFilter)
 
-    dispatch(fetchProductsByFilterAsync(newFilter))
     console.log(section.id, option.value)
     
   }
@@ -94,14 +104,15 @@ const ProductList = () => {
     
     const newFilter = {...filter, _sort: option.sort, _order: option.order} 
     setFilter(newFilter)
-  
+    
     dispatch(fetchProductsByFilterAsync(newFilter))
     // console.log(section.id, option.value)
   }
-
+  
   useEffect(() => {
-    dispatch(fetchAllProductsAsync())
-  }, [dispatch])
+    // dispatch(fetchAllProductsAsync());
+    dispatch(fetchProductsByFilterAsync(filter))
+  }, [dispatch, filter])
 
   return (
     <div>
@@ -222,6 +233,7 @@ const ProductList = () => {
 export default ProductList;
 
 
+// eslint-disable-next-line react/prop-types
 const MobileFilter = ({mobileFiltersOpen, setMobileFiltersOpen, handleFilter}) => {
   
   return (
@@ -343,6 +355,7 @@ const MobileFilter = ({mobileFiltersOpen, setMobileFiltersOpen, handleFilter}) =
   )
 }
 
+// eslint-disable-next-line react/prop-types
 const DesktopFilter = ({handleFilter}) => {
   return (
     <div>
@@ -477,6 +490,7 @@ const Pagination = () => {
     </div>
   )
 }
+// eslint-disable-next-line react/prop-types
 const ProductGrid = ({products}) => {
   return (
     <div>
