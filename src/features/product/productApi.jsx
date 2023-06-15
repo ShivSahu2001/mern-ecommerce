@@ -9,6 +9,16 @@ export function fetchAllProducts() {
 
 }
 
+export function fetchProductById(id) {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve) => {
+        const response = await fetch("http://localhost:8080/products/"+id)
+        const data  = await response.json()
+        resolve({data})
+    });
+
+}
+
 export function fetchProductsByFilter(filter, sort, pagination) {
     // filter = {"category": ["smartphone", "laptop"]}
     // sort = {_sort: "price", _order: "desc"}
@@ -37,6 +47,26 @@ export function fetchProductsByFilter(filter, sort, pagination) {
         const data  = await response.json()
         const totalItems = await response.headers.get('X-Total-Count')
         resolve({data: {products: data, totalItems: +totalItems}})
+    });
+
+}
+
+
+export function fetchAllCategories() {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve) => {
+        const response = await fetch("http://localhost:8080/category")
+        const data  = await response.json()
+        resolve({data})
+    });
+
+}
+export function fetchAllBrands() {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve) => {
+        const response = await fetch("http://localhost:8080/brands")
+        const data  = await response.json()
+        resolve({data})
     });
 
 }
