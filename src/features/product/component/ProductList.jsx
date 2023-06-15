@@ -11,7 +11,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { fetchAllProductsAsync, fetchProductsByFilterAsync, selectAllProducts } from "../productSlice";
+import {  fetchProductsByFilterAsync, selectAllProducts } from "../productSlice";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating",order: "desc", current: false },
@@ -80,39 +80,51 @@ const ProductList = () => {
   const products = useSelector(selectAllProducts)
   const dispatch = useDispatch()
   const [filter, setFilter] = useState({});
+  const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const handleFilter = (e, section, option) => {
     console.log(e.target.checked)
 
     const newFilter = {...filter};
+    // TODO: on server it will support mutiple categories
     if (e.target.checked) {
       // if checked then only filter
-        newFilter[section.id]= option.value
+      if(newFilter[section.id]){
+
+        newFilter[section.id].push(option.value)
+      } else {
+        newFilter[section.id] = [option.value]
+
+      }
+
     } else {
       // if unchecked then don't filter it
-      delete newFilter[section.id]
+      // delete newFilter[section.id]
+        const index = newFilter[section.id].findIndex(el => el===option.value);
+        newFilter[section.id].splice(index, 1);
     }
+    console.log({newFilter})
 
     setFilter(newFilter)
 
-    console.log(section.id, option.value)
+    // console.log(section.id, option.value)
     
   }
   
   const handleSort = (e, option) => {
     
-    const newFilter = {...filter, _sort: option.sort, _order: option.order} 
-    setFilter(newFilter)
-    
-    dispatch(fetchProductsByFilterAsync(newFilter))
+    const sort = { _sort: option.sort, _order: option.order} 
+    setSort(sort)
+    console.log({sort})
+    // dispatch(fetchProductsByFilterAsync(sort))
     // console.log(section.id, option.value)
   }
   
   useEffect(() => {
     // dispatch(fetchAllProductsAsync());
-    dispatch(fetchProductsByFilterAsync(filter))
-  }, [dispatch, filter])
+    dispatch(fetchProductsByFilterAsync({filter, sort }))
+  }, [dispatch, filter, sort])
 
   return (
     <div>

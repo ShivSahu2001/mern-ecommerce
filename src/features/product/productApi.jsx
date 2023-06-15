@@ -9,13 +9,22 @@ export function fetchAllProducts() {
 
 }
 
-export function fetchProductsByFilter(filter) {
+export function fetchProductsByFilter(filter, sort) {
     // filter = {"category": ["smartphone", "laptop"]}
     // sort = {_sort: "price", _order: "desc"}
     let querystring = "";
 
-    for (const key in filter) {
-        querystring += `${key}=${filter[key]}&`
+    for (let key in filter) {
+        const categoryValues = filter[key]
+        if (categoryValues.length > 0) {
+            const lastCategoryValue = categoryValues[categoryValues.length - 1]
+            querystring += `${key}=${lastCategoryValue}&`
+        }
+    }
+    
+    for (let key in sort) {
+        querystring += `${key}=${sort[key]}&`
+
     }
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve) => {
