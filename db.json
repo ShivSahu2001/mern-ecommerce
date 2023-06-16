@@ -726,13 +726,139 @@
     {
       "email": "test@gmail.com",
       "password": "12345678",
+      "addresses": [
+        {
+          "name": "Rohit Sharma",
+          "email": "test@gmail.com",
+          "phone": "7896542031",
+          "street": "Nehru Road",
+          "city": "Mumbai",
+          "region": "Maharashtra",
+          "pinCode": "400072"
+        },
+        {
+          "name": "Rohit Sharma",
+          "email": "test@gmail.com",
+          "phone": "7896542031",
+          "street": "Nehru Road",
+          "city": "Mumbai",
+          "region": "Maharashtra",
+          "pinCode": "400072"
+        }
+      ],
       "id": 1
     },
     {
       "email": "demo@gmail.com",
       "password": "12345678",
+      "addresses": [],
       "id": 2
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 2,
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ],
+      "quantity": 2,
+      "user": 1
+    },
+    {
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ],
+      "quantity": 2,
+      "user": 2,
+      "id": 3
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 2,
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 2,
+          "user": 1
+        }
+      ],
+      "totalAmount": 1798,
+      "totalItem": 2,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "12345678",
+        "addresses": [
+          {
+            "name": "Rohit Sharma",
+            "email": "test@gmail.com",
+            "phone": "7896542031",
+            "street": "Nehru Road",
+            "city": "Mumbai",
+            "region": "Maharashtra",
+            "pinCode": "400072"
+          },
+          {
+            "name": "Rohit Sharma",
+            "email": "test@gmail.com",
+            "phone": "7896542031",
+            "street": "Nehru Road",
+            "city": "Mumbai",
+            "region": "Maharashtra",
+            "pinCode": "400072"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Rohit Sharma",
+        "email": "test@gmail.com",
+        "phone": "7896542031",
+        "street": "Nehru Road",
+        "city": "Mumbai",
+        "region": "Maharashtra",
+        "pinCode": "400072"
+      },
+      "paymentMethod": "card",
+      "id": 1
+    }
+  ]
 }
