@@ -751,52 +751,21 @@
     {
       "email": "demo@gmail.com",
       "password": "12345678",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "Bala Shah",
+          "email": "demo@gmail.com",
+          "phone": "8702168231",
+          "street": "Sangharsh nagar",
+          "city": "Mumbai",
+          "region": "Maharashtra",
+          "pinCode": "400037"
+        }
+      ],
       "id": 2
     }
   ],
-  "cart": [
-    {
-      "id": 2,
-      "title": "iPhone X",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
-      "discountPercentage": 17.94,
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/2/1.jpg",
-        "https://i.dummyjson.com/data/products/2/2.jpg",
-        "https://i.dummyjson.com/data/products/2/3.jpg",
-        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ],
-      "quantity": 2,
-      "user": 1
-    },
-    {
-      "title": "iPhone X",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
-      "discountPercentage": 17.94,
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/2/1.jpg",
-        "https://i.dummyjson.com/data/products/2/2.jpg",
-        "https://i.dummyjson.com/data/products/2/3.jpg",
-        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ],
-      "quantity": 2,
-      "user": 2,
-      "id": 3
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "items": [
@@ -857,8 +826,63 @@
         "region": "Maharashtra",
         "pinCode": "400072"
       },
-      "paymentMethod": "card",
+      "paymentMethod": "cash",
+      "status": "pending",
       "id": 1
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 3
+        }
+      ],
+      "totalAmount": 899,
+      "totalItem": 1,
+      "user": {
+        "email": "demo@gmail.com",
+        "password": "12345678",
+        "addresses": [
+          {
+            "name": "Bala Shah",
+            "email": "demo@gmail.com",
+            "phone": "8702168231",
+            "street": "Sangharsh nagar",
+            "city": "Mumbai",
+            "region": "Maharashtra",
+            "pinCode": "400037"
+          }
+        ],
+        "id": 2
+      },
+      "selectedAddress": {
+        "name": "Bala Shah",
+        "email": "demo@gmail.com",
+        "phone": "8702168231",
+        "street": "Sangharsh nagar",
+        "city": "Mumbai",
+        "region": "Maharashtra",
+        "pinCode": "400037"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 2
     }
   ]
 }
