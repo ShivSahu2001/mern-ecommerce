@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
-  selectLoggedInUser,
+ 
   updateUserAsync,
 } from "../features/auth/authSlice";
 import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice";
+import { selectUserInfo } from "../features/user/userSlice";
 
 const Checkout = () => {
   // eslint-disable-next-line no-unused-vars
@@ -67,7 +68,7 @@ const Checkout = () => {
     formState: { errors },
   } = useForm();
 
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
 
   return (
     <>
