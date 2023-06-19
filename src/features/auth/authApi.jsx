@@ -38,3 +38,12 @@ export function checkUser(loginInfo) {
 }
 
 
+export function logout(userId) {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve) => {
+
+        resolve({data: "successfully Logout!"})
+    });
+
+}
+
